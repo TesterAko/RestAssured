@@ -21,21 +21,9 @@ public class TestDeleteList {
     }
     @Test
     public void deleteListTestAutomationWithRestAssured (){
-        //Json Eingaben//es löscht immer die unteren eingaben!! nur ein Löschvorgang möglich nicht im Thread also ganzes!
 
 
         listicatorRequestHelper.deleteListEntrybyID(listEntry.getGuid());
 
-        /*given()//Body gegeben
-                .auth()//bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
-                .basic("admin","password")//Username+Passwort
-                .body(listEntry)
-                //Body hat die JSOn Liste
-                .when()
-                .delete("/lists/"+listEntry.getGuid())
-                //GUID Parameter hinter URI quasi "http://localhost:4567/listicator/lists/aktuelleGUI"
-                .then()
-                .assertThat()
-                .statusCode(204);//204 für delete success*/
     }
 }

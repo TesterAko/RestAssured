@@ -1,5 +1,5 @@
 package de.Ekrem.helper;
-
+/*
 import de.Ekrem.domain.ListEntry;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -13,9 +13,9 @@ public class ListicatorRequestHelper {
     }
 
     public void createListEntry(ListEntry listEntry) {
-        Response response = given()//Body gegeben
-                .auth()//bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
-                .basic("admin", "password")//Username+Passwort
+        Response response = given()
+                .auth()
+                .basic("admin", "password")
                 .body(listEntry)
                 .when()
                 .post("/lists");
@@ -26,12 +26,11 @@ public class ListicatorRequestHelper {
 
     public void deleteListEntrybyID(String guid){
         given()//Body gegeben
-                .auth()//bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
+                .auth()
                 .basic("admin","password")//Username+Passwort
                 //Body hat die JSOn Liste
                 .when()
                 .delete("/lists/"+ guid)
-                //GUID Parameter hinter URI quasi "http://localhost:4567/listicator/lists/aktuelleGUI"
                 .then()
                 .assertThat()
                 .statusCode(204);//204 für delete success
@@ -39,15 +38,16 @@ public class ListicatorRequestHelper {
 
     public ListEntry getListEntry(String guid){
         Response response = given()//Body gegeben
-                .auth()//bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
+                .auth()
                 .basic("admin","password")//Username+Passwort
                 //Body hat die JSOn Liste
                 .when()
                 .get("/lists/"+ guid);
-                //GUID Parameter hinter URI quasi "http://localhost:4567/listicator/lists/aktuelleGUI"
+
 
         response.then().assertThat().statusCode(200);
 
         return response.getBody().as(ListEntry.class);
     }
 }
+*/
