@@ -18,13 +18,12 @@ public class TestCreateList {
 
     @BeforeMethod
     public void setUp() {
-        RestAssured.baseURI = "http://localhost:4567/listicator";//Vorbedingung Hauptressource
+        RestAssured.baseURI = "http://localhost:4567/listicator";
 
         listicatorRequestHelper = new ListicatorRequestHelper();
     }
     @Test
     public void createListTestAutomationWithRestAssured() {
-        //Json Eingaben durch Klassen/Konstruktoreingabe
         listEntry = new ListEntry("10","Testautomatisierung", "Testen mit Testautomatisierung");
 
         listicatorRequestHelper.createListEntry(listEntry);
@@ -34,7 +33,6 @@ public class TestCreateList {
         assertThat(createdListEntry.getDescription(), equalTo(listEntry.getDescription()));
 
         listicatorRequestHelper.deleteListEntrybyID(listEntry.getGuid());
-        //durch Requesthelper Testaufwand und Wartungsaufwand optimiert bzw minimiert da Testfälle in einer Klasse zusammengefasst wurden
 
     }
 }
