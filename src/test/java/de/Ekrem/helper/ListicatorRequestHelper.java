@@ -1,5 +1,5 @@
 package de.Ekrem.helper;
-
+/*
 import de.Ekrem.domain.ListEntry;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -51,3 +51,4 @@ public class ListicatorRequestHelper {
         return response.getBody().as(ListEntry.class);
     }
 }
+*/
