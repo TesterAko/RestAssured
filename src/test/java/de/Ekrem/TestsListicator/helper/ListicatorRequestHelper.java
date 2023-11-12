@@ -1,6 +1,6 @@
-package de.Ekrem.helper;
+package de.Ekrem.TestsListicator.helper;
 
-import de.Ekrem.domain.ListEntry;
+import de.Ekrem.TestsListicator.domain.ListEntry;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
@@ -26,8 +26,10 @@ public class ListicatorRequestHelper {
 
     public void deleteListEntrybyID(String guid){
         given()//Body gegeben
-                .auth()//bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
-                .basic("admin","password")//Username+Passwort
+                .auth()
+                //bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
+                .basic("admin","password")
+                //Username+Passwort
                 //Body hat die JSOn Liste
                 .when()
                 .delete("/lists/"+ guid)
@@ -38,9 +40,12 @@ public class ListicatorRequestHelper {
     }
 
     public ListEntry getListEntry(String guid){
-        Response response = given()//Body gegeben
-                .auth()//bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
-                .basic("admin","password")//Username+Passwort
+        Response response = given()
+                //Body gegeben
+                .auth()
+                //bei Post List brauchen wir Authentifizierung, deswegen wird es deklariert
+                .basic("admin","password")
+                //Username+Passwort
                 //Body hat die JSOn Liste
                 .when()
                 .get("/lists/"+ guid);

@@ -1,4 +1,4 @@
-package de.Ekrem.domain;
+package de.Ekrem.TestsListicator.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -16,10 +16,9 @@ public class ListEntry {
         this.description = description;
     }
 
-    public ListEntry() {
+    public ListEntry (){
 
     }
-
     public String getGuid() {
         return guid;
     }
