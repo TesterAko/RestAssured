@@ -1,6 +1,6 @@
 package de.Ekrem.TestsListicator;
 
-import de.Ekrem.domain.ListEntry;
+import de.Ekrem.TestsListicator.domain.ListEntry;
 import de.Ekrem.TestsListicator.helper.ListicatorRequestHelper;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeMethod;
@@ -10,6 +10,7 @@ import static io.restassured.RestAssured.given;
 
 public class TestDeleteList {
 
+    private ListEntry deleteListEntrybyID;
     private ListEntry listEntry;
     private ListicatorRequestHelper listicatorRequestHelper;
     @BeforeMethod
@@ -21,8 +22,8 @@ public class TestDeleteList {
     }
     @Test
     public void deleteListTestAutomationWithRestAssured (){
-
-
+        listEntry = new ListEntry("10","Testautomatisierung", "Testen mit Testautomatisierung");
+//Es war kein neuer Listeneintrag erstellt!
         listicatorRequestHelper.deleteListEntrybyID(listEntry.getGuid());
 
         given()

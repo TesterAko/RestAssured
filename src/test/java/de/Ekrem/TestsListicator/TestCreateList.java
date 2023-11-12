@@ -1,6 +1,6 @@
 package de.Ekrem.TestsListicator;
 
-import de.Ekrem.domain.ListEntry;
+import de.Ekrem.TestsListicator.domain.ListEntry;
 import de.Ekrem.TestsListicator.helper.ListicatorRequestHelper;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeMethod;
@@ -30,9 +30,10 @@ public class TestCreateList {
 
         createdListEntry = listicatorRequestHelper.getListEntry(listEntry.getGuid());
 
+
         assertThat(createdListEntry.getDescription(), equalTo(listEntry.getDescription()));
 
-        listicatorRequestHelper.deleteListEntrybyID(listEntry.getGuid());
+        //listicatorRequestHelper.deleteListEntrybyID(listEntry.getGuid());
 
     }
 }
