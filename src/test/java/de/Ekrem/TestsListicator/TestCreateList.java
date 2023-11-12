@@ -1,7 +1,7 @@
 package de.Ekrem.TestsListicator;
 
 import de.Ekrem.domain.ListEntry;
-import de.Ekrem.helper.ListicatorRequestHelper;
+import de.Ekrem.TestsListicator.helper.ListicatorRequestHelper;
 import io.restassured.RestAssured;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
